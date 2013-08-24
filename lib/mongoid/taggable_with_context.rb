@@ -134,9 +134,7 @@ module Mongoid::TaggableWithContext
       # be identical to :db_field unless the :as option is specified
       options[:field] = options[:as] || field
       context = options[:field]
-      options.reverse_merge!(
-          separator: DEFAULT_SEPARATOR
-      )
+      options = { separator: DEFAULT_SEPARATOR }.merge!(options)
 
       # register / update settings
       self.taggable_with_context_options[options[:field]] = options
