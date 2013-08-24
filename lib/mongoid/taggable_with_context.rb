@@ -5,7 +5,7 @@ module Mongoid::TaggableWithContext
   class InvalidTagsFormat < Exception; end
 
   DEFAULT_FIELD = :tags
-  DEFAULT_SEPARATOR = ' '
+  DEFAULT_SEPARATOR = ','
 
   included do
     class_attribute :taggable_with_context_options
